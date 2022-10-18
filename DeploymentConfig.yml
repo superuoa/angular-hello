@@ -18,6 +18,6 @@ spec:
       - name: angular-hello
         image: nexus.esc.yipintsoigroup.com/angular-hello:{{TAG_IMAGE}}
         ports:
-        - containerPort: 4200
+        - containerPort: 80
       imagePullSecrets:
         - name: nexus
