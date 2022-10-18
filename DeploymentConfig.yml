@@ -1,0 +1,23 @@
+apiVersion: v1
+kind: DeploymentConfig
+metadata:
+  name: angular-hello
+  namespace: {{PROJECT}}
+  labels:
+    app: angular-hello
+spec:
+  replicas: 1
+  selector:
+      app: angular-hello
+  template:
+    metadata:
+      labels:
+        app: angular-hello
+    spec:
+      containers:
+      - name: angular-hello
+        image: nexus.esc.yipintsoigroup.com/angular-hello:{{TAG_IMAGE}}
+        ports:
+        - containerPort: 4200
+      imagePullSecrets:
+        - name: nexus
